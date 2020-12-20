@@ -20,7 +20,7 @@ P(e r r) &=1-\sum_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z}
 \end{aligned}
 $$
 
-[解析]：第二个式子是来源于前提假设"假设样本独立同分布，且对任意$x$和任意小正数$\delta$，在$x$附近$\delta$距离范围内总能找到一个训练样本"，则$P(c | \boldsymbol{z}) = P(c | \boldsymbol{x\pm\delta})\simeq P(c|\boldsymbol{x})$。第三个式子是应为$c^{*}\in\mathcal{Y}$，因此$P^{2}\left(c^{*} | \boldsymbol{x}\right)$是$\sum_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x})$的一个分量，所以$\sum_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x}) \geqslant P^{2}\left(c^{*} | \boldsymbol{x}\right)$。第四个式子是平方差公式展开，最后一个式子因为$1 + P^{2}\left(c^{*} | \boldsymbol{x}\right)\leqslant 2$。
+[解析]：第二个式子是来源于前提假设"假设样本独立同分布，且对任意$x$和任意小正数$\delta$，在$x$附近$\delta$距离范围内总能找到一个训练样本"，假设所有$\delta$中最小的$\delta$组成和$\boldsymbol{x}$同一维度的向量$\boldsymbol{\delta}$则$P(c | \boldsymbol{z}) = P(c | \boldsymbol{x\pm\delta})\simeq P(c|\boldsymbol{x})$。第三个式子是应为$c^{*}\in\mathcal{Y}$，因此$P^{2}\left(c^{*} | \boldsymbol{x}\right)$是$\sum_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x})$的一个分量，所以$\sum_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x}) \geqslant P^{2}\left(c^{*} | \boldsymbol{x}\right)$。第四个式子是平方差公式展开，最后一个式子因为$1 + P^{2}\left(c^{*} | \boldsymbol{x}\right)\leqslant 2$。
 
 
 
@@ -146,6 +146,17 @@ b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
 \end{aligned}
 $$
 
+## 10.11
+
+$$
+\mathbf{Z}=\mathbf{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\mathrm{T}} \in \mathbb{R}^{d^{*} \times m}
+$$
+
+[解析]：由题设知，$d^*$为$\mathbf{V}$的非零特征值，因此$\mathbf{B}=\mathbf{V} \mathbf{\Lambda} \mathbf{V}^{\top}$可以写成$\mathbf{B}=\mathbf{V}_{*} \mathbf{\Lambda}_{*} \mathbf{V}_{*}^{\top}$，其中$\mathbf{\Lambda}_{*} \in \mathbb{R}^{d \times d}$为$d$个非零特征值构成的特征值对角矩阵，而$\mathbf{V}_{*} \in \mathbb{R}^{m \times d}$ 为  $\mathbf{\Lambda}_{*} \in \mathbb{R}^{d \times d}$对应的特征值向量矩阵，因此有
+$$
+\mathbf{B}=\left(\mathbf{V}_{*} \mathbf{\Lambda}_{*}^{1 / 2}\right)\left(\boldsymbol{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\top}\right)
+$$
+故而$\mathbf{Z}=\mathbf{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\top} \in \mathbb{R}^{d \times m}$
 
 ## 10.14
 
